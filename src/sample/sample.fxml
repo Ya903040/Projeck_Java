@@ -1,36 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="scenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="457.0" style="-fx-background-color: #333;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane fx:id="scenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="650.0" style="-fx-background-color: #333;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
 
 
 
     <children>
+      <Button fx:id="exitButton" layoutX="582.0" layoutY="454.0" mnemonicParsing="false" onAction="#exit" text="exit" />
 
-        <AnchorPane layoutX="-1.0" prefHeight="104.0" prefWidth="458.0" style="-fx-background-color: yellow;">
+        <AnchorPane prefHeight="88.0" prefWidth="650.0" style="-fx-background-color: yellow;">
          <children>
-              <TextField fx:id="city" layoutX="143.0" layoutY="39.0" promptText="ENTER THE CITY" style="-fx-background-color: white; -fx-border-color: green; -fx-border-radius: 7px;">
+              <TextField fx:id="city" layoutX="365.0" layoutY="31.0" promptText="ENTER THE CITY" style="-fx-background-color: white; -fx-border-color: green; -fx-border-radius: 7px;">
                   <font>
                       <Font name="Constantia" size="12.0" />
                   </font>
               </TextField>
-              <Button fx:id="getData" layoutX="335.0" layoutY="23.0" mnemonicParsing="false" style="-fx-background-color: none;" text="🔎">
+              <Button fx:id="getData" layoutX="551.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: none;" text="🔎">
                   <font>
                       <Font size="29.0" />
                   </font>
               </Button>
          </children>
         </AnchorPane>
-        <Text fx:id="temp_info" fill="#da5d5d" layoutX="89.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":">
+        <Text fx:id="temp_info" fill="#da5d5d" layoutX="104.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":">
             <font>
                 <Font size="40.0" />
             </font>
         </Text>
-      <AnchorPane layoutX="20.0" layoutY="250.0" prefHeight="194.0" prefWidth="416.0">
+      <AnchorPane layoutX="20.0" layoutY="250.0" prefHeight="211.0" prefWidth="416.0">
          <children>
               <Text fx:id="temp_feels" fill="#da5d5d" layoutX="251.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="feels:">
                   <font>
@@ -64,19 +68,15 @@
             </Text>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="1.0" layoutY="474.0" prefHeight="88.0" prefWidth="458.0">
-         <children>
-            <Button fx:id="exitButton" layoutX="390.0" layoutY="44.0" mnemonicParsing="false" onAction="#exit" text="exit" />
-            <Text fx:id="error" fill="#f81e1e" layoutX="6.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="error: " wrappingWidth="355.9830722808838">
-               <font>
-                  <Font size="29.0" />
-               </font></Text>
-         </children>
-      </AnchorPane>
-      <ImageView fitHeight="88.0" fitWidth="75.0" layoutX="7.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="88.0" fitWidth="75.0" layoutX="14.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="https://cdn-icons-png.flaticon.com/512/4327/4327181.png" />
          </image>
       </ImageView>
+      <Text fx:id="error" fill="#f81e1e" layoutX="14.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="error: " wrappingWidth="355.9830722808838">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Text>
     </children>
 </AnchorPane>
