@@ -6,7 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class Main extends Application {
@@ -18,13 +17,13 @@ public class Main extends Application {
         try {
 
 
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
             primaryStage.getIcons().add(new Image("https://cdn-icons-png.flaticon.com/512/831/831319.png"));
 
             primaryStage.setTitle("weather");
             primaryStage.setScene(new Scene(root));
             primaryStage.setResizable(false);
-            primaryStage.initStyle(StageStyle.UTILITY);
+            primaryStage.initStyle(StageStyle.DECORATED);
             primaryStage.show();
     }catch (Exception e){
             e.printStackTrace();

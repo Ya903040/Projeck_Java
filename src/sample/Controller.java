@@ -5,16 +5,11 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ResourceBundle;
-import java.io.IOException;
 
-import com.sun.istack.internal.NotNull;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
+
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
+
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
@@ -68,7 +63,8 @@ public class Controller {
     @FXML
     private Text speed;
 
-
+    @FXML
+    private Text error;
 
     public void exit(javafx.event.ActionEvent actionEvent) {
         stage = (Stage) scenePane.getScene().getWindow();
@@ -109,7 +105,7 @@ public class Controller {
                     double temp_min_1 = temp_min_c - 273.15f;
                     double temp_min_2 = Math.round(temp_min_1 * 100.0) / 100.0;
 
-                    temp_info.setText( temp_c_2 + " C");
+                    temp_info.setText(temp_c_2 + " C");
                     temp_feels.setText("feels: " + temp_feels_2 + " C");
                     temp_max.setText("maximum: " + temp_max_2 + " C");
                     temp_min.setText("minimum: " + temp_min_2 + " C");
@@ -126,7 +122,7 @@ public class Controller {
 
     }
 
-    private static String getUrlContent(String urlAdress) {
+    private String getUrlContent(String urlAdress) {
         StringBuffer content = new StringBuffer();
 
         try {
@@ -142,6 +138,8 @@ public class Controller {
             }
             bufferedReader.close();
         } catch (Exception e) {
+
+            error.setText("error : такого города нет");
             System.out.println("такого города нет");
         }
         return content.toString();
